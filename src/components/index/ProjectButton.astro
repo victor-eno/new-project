@@ -1,0 +1,94 @@
+---
+import "@fontsource/material-icons";
+---
+
+<div class="main-btn">
+    <a href="#projects" class="btn one">See My Latest Project 
+    <div .icons><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M16.01 11H4v2h12.01v3L20 12l-3.99-4z"/></svg></div>
+    </a>
+</div>
+
+<style>
+    .btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 0.5em 3.2em;
+    text-align: center;
+    border: 1px solid white;
+    font-family: 'Poppins', Courier, monospace;
+    font-weight: 300;
+    width: 300px;
+    height: 45px;
+    border-radius: 7px;
+    cursor: pointer; 
+    color: white;
+    background-color: rgb(244, 73, 73);
+}
+    .btn {
+    animation: blink 4s infinite alternate;
+    }
+    @-webkit-keyframes blink {
+    40% {
+        opacity: 1;
+    }
+    42% {
+        opacity: 0.8;
+    }
+    43% {
+        opacity: 1;
+    }
+    45% {
+        opacity: 0.2;
+    }
+    46% {
+        opacity: 1;
+    }
+}
+    .one:hover {
+    color: rgb(244, 73, 73);
+    font-size: 1em;
+    font-weight: 500;
+    border: 1px solid white;
+    background: linear-gradient(to right, rgb(244, 73, 73), white, rgb(244, 73, 73));
+    background-size: 100% 400%;  
+    animation: animate 5s linear infinite;
+    background-size: 200%;
+    }
+    @keyframes animate {
+            0%{
+                background-position: 0% 100%;
+            }
+            50%{
+                background-position: 100% 0%;
+            }
+            100%{
+                background-position: 0% 100%;
+            }
+  }
+  @media screen and (max-width: 800px) {
+    .main-btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 5em;
+    }
+    .btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0.5em 3em;
+    text-align: center;
+    border: 1px solid rgb(244, 73, 73);
+    font-family: 'Poppins', Courier, monospace;
+    font-weight: 300;
+    width: 300px;
+    height: 45px;
+    border-radius: 40px;
+    cursor: pointer; 
+    background-color: rgb(244, 73, 73);
+    color: white;
+    box-shadow: 5px 5px 5px transparent;
+}
+  }
+</style>

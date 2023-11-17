@@ -1,0 +1,101 @@
+---
+import { CollectionEntry, getCollection } from 'astro:content';
+import DefaultLayout from '../../layouts/DefaultLayout.astro'
+
+export async function getStaticPaths() {
+	const posts = await getCollection('blog');
+	return posts.map((post) => ({
+		params: { slug: post.slug },
+		props: post,
+	}));
+}
+
+type Props = CollectionEntry<'blog'>;
+const post = Astro.props;
+const { Content } = await post.render();
+---
+
+<DefaultLayout>
+ <section>
+  <article>
+   <div class="heading">
+    <h1 class="title">{post.data.title}</h1>
+    <p> 
+      <span class="icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="26" viewBox="0 0 1024 1024"><path fill="currentColor" d="m960 95.888l-256.224.001V32.113c0-17.68-14.32-32-32-32s-32 14.32-32 32v63.76h-256v-63.76c0-17.68-14.32-32-32-32s-32 14.32-32 32v63.76H64c-35.344 0-64 28.656-64 64v800c0 35.343 28.656 64 64 64h896c35.344 0 64-28.657 64-64v-800c0-35.329-28.656-63.985-64-63.985zm0 863.985H64v-800h255.776v32.24c0 17.679 14.32 32 32 32s32-14.321 32-32v-32.224h256v32.24c0 17.68 14.32 32 32 32s32-14.32 32-32v-32.24H960v799.984zM736 511.888h64c17.664 0 32-14.336 32-32v-64c0-17.664-14.336-32-32-32h-64c-17.664 0-32 14.336-32 32v64c0 17.664 14.336 32 32 32zm0 255.984h64c17.664 0 32-14.32 32-32v-64c0-17.664-14.336-32-32-32h-64c-17.664 0-32 14.336-32 32v64c0 17.696 14.336 32 32 32zm-192-128h-64c-17.664 0-32 14.336-32 32v64c0 17.68 14.336 32 32 32h64c17.664 0 32-14.32 32-32v-64c0-17.648-14.336-32-32-32zm0-255.984h-64c-17.664 0-32 14.336-32 32v64c0 17.664 14.336 32 32 32h64c17.664 0 32-14.336 32-32v-64c0-17.68-14.336-32-32-32zm-256 0h-64c-17.664 0-32 14.336-32 32v64c0 17.664 14.336 32 32 32h64c17.664 0 32-14.336 32-32v-64c0-17.68-14.336-32-32-32zm0 255.984h-64c-17.664 0-32 14.336-32 32v64c0 17.68 14.336 32 32 32h64c17.664 0 32-14.32 32-32v-64c0-17.648-14.336-32-32-32z"/></svg>
+      </span>
+       {post.data.pubDate.toDateString()}
+    </p>
+   </div>
+   <div class="content">
+     <hr />
+     <Content />
+    </div>
+  </article>
+ </section>
+</DefaultLayout>
+
+<style>
+  section {
+    padding-top: 50px;
+    background: white;
+   }
+   article {
+     margin: 40px;
+     padding: 20px 100px 200px 100px;
+   }
+   .heading {
+    background-color: rgb(244, 73, 73);
+    border: 1px solid rgb(244, 73, 73);
+    padding: 5em;
+    border-radius: 5px 5px;
+   }
+   article h1 {
+     color: var(--moody-night);
+     font-size: 4em;
+     font-weight: 900;
+     line-height: 1em;
+   }
+   a {
+     color: rgb(107, 207, 254);
+     text-decoration: none;
+     font-family: 'Poppins', Courier, monospace;
+     font-weight: 700;
+     cursor: pointer;
+   }
+   p {
+     font-size: 25px;
+     color: white;
+     padding-top: 10px;
+     font-weight: 600;
+   }
+   .icon {
+    padding-right: 10px;
+  }
+   .content {
+      color: var(--moody-night);
+      font-size: 1.4em;
+      font-weight: 300;
+   }
+   @media screen and (max-width: 800px) {
+    article {
+     margin: 0;
+    padding: 90px 10px;
+   }
+   article h1 {
+     font-size: 3.2em;
+     font-weight: 800;
+     line-height: 1em;
+   }
+   .heading {
+    padding: 1em;
+   }
+   @media (max-width: 800px) {
+    .content {
+      font-size: 1em;
+      font-weight: 300;
+   }
+   }
+   }
+</style>
+

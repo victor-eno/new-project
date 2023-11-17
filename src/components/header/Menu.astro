@@ -1,0 +1,50 @@
+---
+import Name from "./Name.astro";
+import SiteMap from "./SiteMap.astro";
+import Status from "./Status.astro";
+import Links from "./Links.astro";
+---
+
+<div class="menu-container">
+    <div class="nav-items">
+        <Name />
+        <Status /> 
+    </div>
+    <div class="nav-items">
+        <SiteMap />
+        <Links /> 
+    </div>
+</div>
+
+<style>
+    .menu-container {
+        position: relative;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: 1em 5em;
+        margin: 0;
+        background-color: white;
+    }
+    .nav-items {
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+        align-items: center;
+        text-align: center;
+        gap: 2.5em;
+        padding: 0;
+        padding-bottom: 0em;
+        border-bottom: 1px solid black;
+    }
+    @media (max-width: 800px) {
+        .menu-container {
+        display: none;
+    }
+    }
+</style>
+

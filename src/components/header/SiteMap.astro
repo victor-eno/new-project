@@ -1,0 +1,46 @@
+---
+
+---
+
+<div class="sitemap">
+    <div class="category">Sitemap</div>
+    <div class="data"><a href="/">Home</a><a href="/about">About</a><a href="/projects">Projects</a><a href="/blog">Writings</a></div>
+</div>
+
+<style>
+    .sitemap {
+        display: flex;
+        flex-direction: row;
+        padding: 0.3em;
+        margin: 0;
+        font-family: Poppins;
+        text-transform: uppercase;
+        line-height: 1.1em;
+        background-color: transparent;
+    }
+    .category {
+        font-weight: 500; 
+        color:  rgb(244, 73, 73);
+    }
+    .data {
+        font-size: 1em;
+        font-weight: 300;
+        color: black;
+    } 
+    a {
+		list-style: none;
+		text-decoration: none;
+        padding: 0 0.4em;
+		color: black;
+	}
+    a:hover {
+        color: rgb(244, 73, 73);
+        font-weight: 500;
+        font-style: oblique;
+    }
+    @media (max-width: 800px) {
+        .sitemap {
+            display: none;
+        }
+    }
+</style>
