@@ -1,6 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
-import BlogHeader from '../components/writings/BlogHeader.astro';
+import BlogHeader from '../components/BlogHeader.astro';
 import DefaultLayout from '../layouts/DefaultLayout.astro';
 
 const posts = (await getCollection('blog', ({ data }) => {
