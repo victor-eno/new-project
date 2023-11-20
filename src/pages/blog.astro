@@ -8,6 +8,10 @@ const posts = (await getCollection('blog', ({ data }) => {
 })).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
+interface Props {
+  title: string,
+  description: string
+}
 const title = "Victor eno";
 const description = "my personal portfolio"
 ---
