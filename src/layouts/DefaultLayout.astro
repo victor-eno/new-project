@@ -7,6 +7,13 @@ const {
   author = 'Victor Eno',
 } = Astro.props;
 
+export interface Props {
+  title: string;
+  description: string;
+  image: string;
+  author: string;
+}
+
 import SiteMeta from "../components/SiteMeta.astro"
 import Menu from "../components/Menu.astro";
 import '@fontsource/poppins';
@@ -63,6 +70,7 @@ import '@fontsource/roboto/900.css';
 			--blue-swift: rgb(12, 81, 108);
 			--purple-shift: rgb(230, 30, 255);
 			--pink-shift: rgba(255, 103, 230, 0.881);
+			--red-shift: rgb(244, 73, 73);
 			--pink-sea: #ef96c5;
 			--blue-dew: #84ebf4;
 			--purple-mirage: #201932;
@@ -70,6 +78,7 @@ import '@fontsource/roboto/900.css';
 			--moody-text: #c5cae9;
 			--moody-night: #40444b;
 			--cool-night: #40444b;
+			--fff-ffffff: rgba(235, 235, 235, 0.079);
 	
 		font-family: 'Poppins', Courier, monospace;
 	}
@@ -88,6 +97,7 @@ import '@fontsource/roboto/900.css';
 			min-height: 100vh;
 			line-height: 1.6em;
 			color: white;
+			background-color: white;
 			scroll-behavior: smooth;
 		}
 		.default-layout {

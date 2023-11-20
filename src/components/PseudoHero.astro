@@ -1,0 +1,126 @@
+---
+import ProjectButton from "./ProjectButton.astro";
+import SelectedProjects from "./SelectedProjects.astro";
+---
+<div class="hero-container">
+    <div class="text-area">
+       <h1 class="name-header">victor eno</h1>
+       <p class="paragragh">Hello!
+        I'm a <span class="span-highlights">web developer</span> that loves creating
+        <span class="span-highlights">functioning, instinctive web interfaces</span>,
+        through code to bring wonderful ideas to life
+    </p>
+    </div>
+    <div class="cta">
+        <SelectedProjects />
+    </div>
+</div>
+
+<style>
+    .hero-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-width: 100%;
+        height: 80vh;
+        margin: 0;
+    }
+	.text-area {
+        text-align: center;
+        text-wrap: wrap;
+        padding-top: 20em;
+    }
+    h1 {
+        font-size: 5em;
+        font-family: 'Poppins', Courier, monospace;
+        font-weight: 600;
+        color: var(--moody-night);
+        text-transform: none;
+        text-transform: uppercase;
+        line-height: 0.6em;
+        padding-bottom: 0.3em;
+    }
+    .paragragh {
+        font-size: 1.2em;
+        font-family: 'Poppins', Courier, monospace;
+        font-weight: 300;
+        color: var(--moody-night);
+        opacity: 0.85;
+        text-align: justify;
+        padding: 0 17em;
+        line-height: 1em;
+    }
+    .span-highlights {
+        color: black;
+        font-weight: 500;
+    }
+    .cta {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-top: 40px;
+    }
+    @media screen and (max-width: 800px) {
+        .hero-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-width: 100%;
+        height: 80vh;
+        margin: 0;
+    }
+    .text-area {
+        text-align: center;
+        text-wrap: wrap;
+        padding-top: 10em;
+    }
+    h1 {
+        font-size: 3em;
+        font-family: 'Poppins', Courier, monospace;
+        font-weight: 600;
+        text-transform: none;
+        text-transform: uppercase;
+        line-height: 0.6em;
+        padding-bottom: 0.3em;
+    }
+    .paragragh {
+        font-size: 1.2em;
+        font-family: 'Poppins', Courier, monospace;
+        font-weight: 300;
+        color: var(--moody-night);
+        opacity: 0.85;
+        text-align: justify;
+        padding: 0 4em;
+        line-height: 1em;
+    }
+    .cta {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-top: 80px;
+    }
+    }
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

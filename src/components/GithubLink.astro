@@ -1,0 +1,72 @@
+<div class="rainbow-button">
+    <a href="https://github.com/victor-eno">
+      <span><slot>Github: Victor Eno</slot></span>
+    </a>
+  </div>
+  
+  <style>
+    .rainbow-button {
+      position: relative;
+    }
+  
+    a {
+      width: 230px;
+      text-align: center;
+      position: relative;
+      border-radius: 6px;
+      box-sizing: border-box;
+      font-weight: bold;
+      display: block;
+      z-index: 2;
+      overflow: hidden;
+      padding: 3px;
+      text-decoration: none;
+    }
+  
+    a::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 200%;
+      height: 100%;
+      background: linear-gradient(115deg, #40444b, #f1f1f1, #40444b, #40444b,#f9f9f9);
+      background-size: auto;
+      background-size: 50% 100%;
+    }
+  
+    a:hover::before,
+    a:focus::before {
+      animation: rainbow-effect 1s linear infinite;
+    }
+  
+    a:hover span,
+    a:focus span {
+      letter-spacing: 0.1em;
+    }
+    
+    span {
+      position: relative;
+      z-index: 2;
+      padding: .875rem 1.5rem;
+      font-size: 1.1rem;
+      font-weight: 300;
+      text-transform: uppercase;
+      align-items: center;
+      color: var(--moody-night);
+      background-color: white;
+      border-radius: 3px;
+      display: block;
+      justify-content: center;
+      box-sizing: border-box;
+      height: 100%;
+      transition: letter-spacing 0.3s ease;
+    }
+  
+    @keyframes rainbow-effect {
+      to {
+        transform: translateX(-50%);
+      }
+    }
+  </style>
+  

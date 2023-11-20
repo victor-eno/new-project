@@ -2,7 +2,7 @@
 import ProjectButton from "./ProjectButton.astro";
 ---
 <div class="hero-container">
-    <div class="hero-text">
+    <div class="text-area">
         <h1 class="greetings">hello!</h1>
         <h1 class="name">I am <span class="span-text-name">victor</span></h1>
         
@@ -17,21 +17,23 @@ import ProjectButton from "./ProjectButton.astro";
 
 <style>
 	.hero-container {
-        width: 100%;
-        height: 80vh;
-        position: relative;
+        min-width: 100%;
+        height: 100vh;
         display: flex;
         flex-direction: column;
     }
-    .hero-text {
+    .text-area {
         font-family: 'Poppins', Courier, monospace;
         text-align: start;
         padding: 4.5em;
     }
+    h1 {
+        color: var(--moody-night);
+        opacity: 0.85;
+    }
     .greetings {
         font-size: 8em;
         font-weight: 700;
-        color: var(--moody-night);
         text-transform: uppercase;
         animation: bounce 2s;
     }
@@ -58,20 +60,20 @@ import ProjectButton from "./ProjectButton.astro";
     }
     .span-text-name {
         color: rgb(244, 73, 73);
-        font-weight: 900;
+        font-weight: 700;
     }
     .hero-container p {
         color: var(--moody-night);
-        font-size: 2.8em;
+        font-size: 2em;
         font-weight: 50;
         line-height: 1em;
-        width: 85%;
+        width: 65%;
         padding-top: 1em;
         padding-bottom: 0.5em;
     }
     .span-text-bio {
         color: rgb(244, 73, 73);
-        opacity: 0.8;
+        opacity: 0.85;
         font-weight: 400;
     }
     @media screen and (max-width: 800px) {

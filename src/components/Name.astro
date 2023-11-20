@@ -2,42 +2,32 @@
 
 ---
 
-<div class="name">
-    <div class="category">Name</div>
-    <div class="data">Victor Eno™, 2023 </div>
+<div class="status">
+  <div class="category">Name</div>
+  <div class="data">Victor eno</div>
 </div>
 
 <style>
-    .name {
-        display: flex;
-        flex-direction: row;
-        padding: 0.3em;
-        margin: 0;
-        font-family: Poppins;
-        text-transform: uppercase;
-        line-height: 1.1em;
-        background-color: transparent;
-    }
-    .category {
-        font-weight: 500; 
-        color:  rgb(244, 73, 73);
-        padding-right: 1em;
-    }
-    .data {
-        font-size: 1em;
-        font-weight: 300;
-        color: black;
-    } 
-    @media screen and (max-width: 800px)  {
-        .name {
-        display: flex;
-        flex-direction: row;
-        padding: 0.5em;
-        margin: 0;
-        font-family: Poppins;
-        text-transform: uppercase;
-        line-height: 1em;
-        background-color: transparent;
-    }
-    }
+  .status {
+      display: flex;
+      flex-direction: column;
+      padding: 0.3em;
+      margin: 0;
+      font-family: Poppins;
+      line-height: 1.1em;
+      background-color: transparent;
+  }
+  .category {
+      font-weight: 400; 
+      font-size: 1em;
+      color:  var(--moody-night);
+      text-transform: uppercase;
+      padding-right: 1em;
+  }
+  .data {
+      font-size: 0.8em;
+      font-weight: 300;
+      color: black;
+      text-transform: capitalize;
+  } 
 </style>

@@ -8,9 +8,11 @@ const posts = (await getCollection('blog', ({ data }) => {
 })).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
+const title = "Victor eno";
+const description = "my personal portfolio"
 ---
 
-<DefaultLayout>
+<DefaultLayout title={title} description={description}>
   <section>
     <div class="blog-header"> <BlogHeader /></div>
     <ul class="content">
