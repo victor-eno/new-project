@@ -1,5 +1,5 @@
 ---
-import { getCollection } from 'astro:content';
+import { CollectionEntry, getCollection } from 'astro:content';
 import BlogHeader from '../components/BlogHeader.astro';
 import DefaultLayout from '../layouts/DefaultLayout.astro';
 
@@ -8,12 +8,10 @@ const posts = (await getCollection('blog', ({ data }) => {
 })).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
-interface Props {
-  title: string,
-  description: string
-}
-const { title = "Victor eno" } = Astro.props;
-const { description = "my personal portfolio" } = Astro.props;
+
+type Props = CollectionEntry<'blog'>['data'];
+
+const { title, description } = Astro.props;
 ---
 
 <DefaultLayout title={title} description={description}>
